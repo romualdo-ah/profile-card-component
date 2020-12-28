@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Profile card component</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      html {
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      :root {
+        --color_primary_1: hsl(185, 75%, 39%);
+        --color_primary_2: hsl(229, 23%, 23%);
+        --color_primary_3: hsl(227, 10%, 46%);
+        --color_neutral: hsl(0, 0%, 59%);
+
+        --profile_photo_dimension: 160px;
+
+        --card_border_radius: 15px;
+      }
+
+      *,
+      *:after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+      }
+      body {
+        font-family: "Kumbh Sans";
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: var(--color_primary_1);
+        background-image: url(images/bg-pattern-top.svg),
+          url(images/bg-pattern-bottom.svg);
+        background-repeat: no-repeat;
+
+        background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+      }
+
+      main > section {
+        border-radius: var(--card_border_radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        box-shadow: 0px 20px 150px 50px var(--color_primary_1);
+      }
+
+      main > section > .top {
+        width: 100%;
+        height: 45%;
+        background-image: url(/images/bg-pattern-card.svg);
+      }
+      .card_content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      .profile_photo {
+        height: calc(var(--profile_photo_dimension));
+        top: -15%;
+        border-radius: 50%;
+
+        position: relative;
+        border: 6px solid #fff;
+        background-color: #fff;
+      }
+
+      .stats_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        width: 100%;
+        height: 100px;
+        border-top: 0.5px solid #cbcbcb;
+      }
+
+      .name,
+      .stats {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .name > span {
+        display: inline;
+        font-weight: 400;
+        color: var(--color_neutral);
+        margin-left: 6px;
+      }
+      .name,
+      .name + p {
+        top: -24%;
+        position: relative;
+      }
+
+      .name + p {
+        margin-top: 12px;
+        color: var(--color_neutral);
+      }
+      .stats > span {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        margin-top: 12px;
+        color: var(--color_neutral);
+        letter-spacing: 2px;
+      }
+
+      .stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .attribution {
+        bottom: 30px;
+        position: absolute;
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+        text-decoration-color: var(--color_primary_3);
+      }
+
+      @media (max-width: 1440px) {
+        main > section {
+          width: min(420px, 85%);
+          min-width: 320px;
+          height: 420px;
+        }
+      }
+      @media (max-width: 375px) {
+        main > section {
+          width: min(320px, 85%);
+          min-width: 320px;
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="top"></div>
+        <img
+          src="images/image-victor.jpg"
+          alt="profile_photo_victor"
+          class="profile_photo"
+        />
+
+        <div class="card_content">
+          <h3 class="name">
+            Victor Crest
+            <span>26</span>
+          </h3>
+          <p>London</p>
+          <div class="stats_container">
+            <div class="stats">
+              80K
+              <span> Followers </span>
+            </div>
+            <div class="stats">
+              803K
+              <span> Likes </span>
+            </div>
+            <div class="stats">
+              1.4K
+              <span> Photos </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/romualdo-ah">Romualdo-ah</a>.
+      </div>
+    </main>
+  </body>
+</html>
